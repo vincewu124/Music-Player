@@ -1,0 +1,42 @@
+:root {
+	--bubble-color-right: linear-gradient(to right bottom, rgba(251, 94, 105, 0.897), rgba(255, 255, 255, 0.3));
+	--bubble-color-left: linear-gradient(to right bottom, rgba(255, 255, 255, 0.3), rgba(251, 94, 105, 0.897));
+}
+
+[data-theme='dark'] {
+	--bubble-color-right: linear-gradient(to right bottom, rgba(30, 215, 96, 0.897), rgba(233, 233, 233, 0.87));
+	--bubble-color-left: linear-gradient(to right bottom, rgba(233, 233, 233, 0.87), rgba(30, 215, 96, 0.897));
+}
+.circleRight,
+.circleLeft {
+	height: 30rem;
+	width: 30rem;
+	position: relative;
+	border-radius: 50%;
+	z-index: -1;
+	animation: none;
+	// animation: fade ease 3s;
+	// animation-iteration-count: 1;
+	// animation-fill-mode: forwards;
+}
+
+.circleRight {
+	background: var(--bubble-color-right);
+	bottom: 93%;
+	left: 55%;
+}
+
+.circleLeft {
+	background: var(--bubble-color-left);
+	bottom: 45%;
+	left: -35%;
+}
+
+// @keyframes fade {
+// 	0% {
+// 		opacity: 0;
+// 	}
+// 	100% {
+// 		opacity: 1;
+// 	}
+// }

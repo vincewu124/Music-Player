@@ -1,0 +1,211 @@
+$applePink: #f94c57;
+$shift: 10px;
+
+:root {
+	--color-hover: invert(42%) sepia(44%) saturate(1401%) hue-rotate(317deg) brightness(113%) contrast(97%);
+	--shuffle-repeat: invert(0%) sepia(100%) saturate(0%) hue-rotate(284deg) brightness(107%) contrast(107%);
+	--move-pause-play-button: -5px;
+	--move-shuffle: -37px;
+	--move-repeat: 29%;
+	--logo-fill: invert(40%) sepia(1%) saturate(0%) hue-rotate(245deg) brightness(96%) contrast(90%);
+}
+
+[data-theme='dark'] {
+	--color-hover: invert(69%) sepia(26%) saturate(1330%) hue-rotate(86deg) brightness(93%) contrast(92%);
+	--shuffle-repeat: invert(99%) sepia(1%) saturate(1638%) hue-rotate(215deg) brightness(106%) contrast(57%);
+	--move-pause-play-button: -12px;
+	--move-shuffle: -46px;
+	--move-repeat: 28%;
+	--logo-fill: invert(100%) sepia(38%) saturate(0%) hue-rotate(49deg) brightness(111%) contrast(101%);
+}
+
+.logo {
+	background: transparent;
+	padding: 0;
+	border: none;
+	background: none;
+	position: absolute;
+	top: -15%;
+	left: 42%;
+	width: 10px;
+	height: 10px;
+}
+
+.logo:focus {
+	outline: 0;
+}
+
+.themeLogo {
+	filter: var(--logo-fill);
+	width: 70px;
+	position: relative;
+	top: 50px;
+}
+
+.themeLogo:hover {
+	filter: var(--color-hover);
+}
+
+.playPauseButton {
+	background: transparent;
+	padding: 0;
+	border: none;
+	background: none;
+	cursor: pointer;
+	position: relative;
+	top: var(--move-pause-play-button);
+	left: $shift;
+}
+
+.playPauseButton:focus {
+	outline: 0;
+}
+
+.pausePlayImage:hover {
+	filter: var(--color-hover);
+}
+
+.prev {
+	background: transparent;
+	padding: 0;
+	border: none;
+	background: none;
+	cursor: pointer;
+	position: relative;
+	top: -5px;
+	left: $shift;
+}
+
+.prev:focus {
+	outline: 0;
+}
+
+.prevImage:hover {
+	filter: var(--color-hover);
+}
+
+.next {
+	background: transparent;
+	padding: 0;
+	border: none;
+	background: none;
+	cursor: pointer;
+	position: relative;
+	top: -5px;
+	left: $shift;
+}
+
+.next:focus {
+	outline: 0;
+}
+
+.skipImage:hover {
+	filter: var(--color-hover);
+}
+
+.loginButton {
+	height: 60px;
+	width: 100px;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	left: 20%;
+
+	border-radius: 20px;
+	background: black;
+	padding: 0;
+	cursor: pointer;
+}
+
+.loginButton:focus {
+	outline: 0;
+}
+
+.muteOrVol {
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	margin: 0 auto;
+	top: -14.5px;
+	left: 5px;
+	height: 20px;
+	width: 20px;
+	padding: 0;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+.muteOrVol:focus {
+	outline: 0;
+}
+
+#volDown {
+	align-items: center;
+	justify-content: center;
+}
+
+.shuffleImage {
+	filter: var(--shuffle-repeat);
+	position: relative;
+	top: var(--move-shuffle);
+	left: -30px;
+}
+
+.shuffleImage:hover {
+	filter: var(--color-hover);
+}
+
+.repeatImage {
+	filter: var(--shuffle-repeat);
+	position: absolute;
+	top: var(--move-repeat);
+	left: 370px;
+}
+
+.repeatImage:hover {
+	filter: var(--color-hover);
+}
+
+.shuffle {
+	background: transparent;
+	padding: 0;
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+.shuffle:focus {
+	outline: 0;
+}
+
+.repeat {
+	background: transparent;
+	padding: 0;
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+.repeat:focus {
+	outline: 0;
+}
+
+.volUp {
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	margin: 0 auto;
+	top: -14.5px;
+	left: 310px;
+	height: 20px;
+	width: 20px;
+	padding: 0;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+.volUp:focus {
+	outline: 0;
+}

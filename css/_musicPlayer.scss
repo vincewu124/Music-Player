@@ -1,0 +1,217 @@
+$playerLength: 1000px;
+$playerWidth: 50 + $playerLength/2;
+
+:root {
+	--primary-color: #fb5e69;
+	--outside-background: #2a2a2a;
+	--player-background: white;
+	--title-color: black;
+	--artist-color: var(--primary-color);
+	--volume-shade: black;
+	--volume-bar-color: linear-gradient(90deg, rgb(249, 76, 87) 50%, rgb(190, 190, 190) 50%);
+	--volume-icon-color: invert(43%) sepia(36%) saturate(5399%) hue-rotate(330deg) brightness(102%) contrast(95%);
+	--progress-bar-color: linear-gradient(90deg, rgb(70, 70, 70) 0%, rgb(190, 190, 190) 0%);
+}
+
+[data-theme='dark'] {
+	--primary-color: #1ed760;
+	--outside-background: white;
+	--player-background: #3b3b3b;
+	--title-color: white;
+	--artist-color: var(--primary-color);
+	--volume-shade: rgb(200, 200, 200);
+	--volume-bar-color: linear-gradient(90deg, rgb(30, 215, 96) 50%, rgb(190, 190, 190) 50%);
+	--volume-icon-color: invert(69%) sepia(26%) saturate(1330%) hue-rotate(86deg) brightness(93%) contrast(92%);
+	--progress-bar-color: linear-gradient(90deg, rgb(190, 190, 190) 0%, rgb(80, 80, 80) 0%);
+}
+
+@mixin createBox($length) {
+	border: 2px solid black;
+	width: $length;
+	height: $length;
+}
+
+.right-box {
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	width: 50%;
+	height: 100vh;
+	padding: 70px 0px 0px 0px;
+}
+
+.player {
+	background: var(--player-background);
+	padding: 40px 5px 5px 5px;
+	border-radius: 20px;
+	width: $playerWidth;
+	height: $playerLength;
+	margin: 0 auto;
+	position: relative;
+	left: 0%;
+	top: 10%;
+	align-items: center;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+	animation: drop 1.5s ease;
+	display: block;
+}
+
+.song-cover {
+	@include createBox(465px);
+	margin: 0 auto;
+	border-radius: 20px;
+}
+
+.coverImage {
+	margin: 0 auto;
+	border-radius: 20px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
+}
+
+.song-title {
+	padding: 30px 0px 0px 0px;
+	text-align: center;
+	margin: 0;
+	font-weight: 600;
+	color: var(--title-color);
+	position: relative;
+	top: 50px;
+}
+
+.artist {
+	text-align: center;
+	color: var(--artist-color);
+	font-weight: 500;
+	height: 100px;
+	position: relative;
+	top: 60px;
+}
+
+.mediaButtons {
+	display: inline-block;
+	position: absolute;
+	left: 16%;
+	top: 780px;
+}
+
+#player {
+	width: 350px;
+	height: 50px;
+	position: absolute;
+	margin: 0 auto;
+	top: 900px;
+	left: 90px;
+
+	i {
+		position: absolute;
+		margin-top: -6px;
+		color: var(--volume-shade);
+	}
+
+	i.fa-volume-down {
+		margin-left: -13px;
+	}
+
+	i.fa-volume-mute {
+		margin-left: -13px;
+	}
+
+	i.fa-volume-up {
+		margin-right: -8px;
+		right: 0;
+	}
+}
+
+#player i.fa-volume-down:hover {
+	filter: var(--volume-icon-color);
+}
+
+#player i.fa-volume-mute:hover {
+	filter: var(--volume-icon-color);
+}
+
+#player i.fa-volume-up:hover {
+	filter: var(--volume-icon-color);
+}
+
+#player input {
+	-webkit-appearance: none;
+	position: absolute;
+	left: 24px;
+	margin: 0 auto;
+	height: 5px;
+	width: 300px;
+	border-radius: 15px;
+	background: var(--volume-bar-color);
+	outline: none;
+}
+
+#player input::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	height: 20px;
+	width: 20px;
+	background: white;
+	border-radius: 50%;
+	border: 1px solid rgb(100, 100, 100);
+	cursor: pointer;
+}
+
+.currTime {
+	color: var(--title-color);
+	text-align: right;
+	float: left;
+	position: absolute;
+	left: -10px;
+	top: 548px;
+	font-weight: 500;
+	width: 70px;
+}
+
+.totalTime {
+	color: var(--title-color);
+	float: right;
+	position: relative;
+	right: 15px;
+	top: 43px;
+	font-weight: 500;
+}
+
+.progressBarContainer input {
+	-webkit-appearance: none;
+	position: relative;
+	left: 73px;
+	top: 40px;
+	margin: 0 auto;
+	height: 5px;
+	width: 390px;
+	border-radius: 15px;
+	background: var(--progress-bar-color);
+	outline: none;
+}
+
+.progressBarContainer input::-webkit-slider-thumb {
+	cursor: pointer;
+	-webkit-appearance: none;
+	height: 10px;
+	width: 10px;
+	background: white;
+	border-radius: 50%;
+	border: 1px solid rgb(100, 100, 100);
+}
+
+.progressBarContainer input:hover::-webkit-slider-thumb {
+	height: 15px;
+	width: 15px;
+	cursor: pointer;
+}
+
+@keyframes drop {
+	0% {
+		opacity: 0;
+		transform: translateY(-80px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}

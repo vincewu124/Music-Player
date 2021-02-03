@@ -1,0 +1,30 @@
+@import './musicPlayer';
+@import './buttons';
+@import './toggleMode';
+@import './circles';
+
+:root {
+	--background-color: #fbf9f9;
+}
+
+[data-theme='dark'] {
+	--background-color: #2a2a2a;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	background: var(--background-color);
+	font-family: 'Montserrat', sans-serif;
+}
